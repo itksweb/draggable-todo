@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xxs: 15rem;
+  --breakpoint-xls: 22.5rem;
+  --breakpoint-xs: 30rem;
+
+  --color-primary:hsl(220, 98%, 61%);
+  /* light theme */
+  --color-vlg-l: hsl(0, 0%, 98%);
+  --color-vlgb-l: hsl(236, 33%, 92%);
+  --color-lgb-l: hsl(233, 11%, 84%);
+  --color-dgb-l: hsl(236, 9%, 61%);
+  --color-vdgb-l: hsl(235, 19%, 35%);
+  /* dark theme */
+  --color-vdb-d: hsl(235, 21%, 11%);
+  --color-vddb-d: hsl(235, 24%, 19%);
+  --color-lgb-d: hsl(234, 39%, 85%);
+  --color-lgb-d-hover: hsl(234, 39%, 85%);
+  --color-dgb-d: hsl(234, 11%, 52%);
+  --color-vdgb-d: hsl(233, 14%, 35%);
+  --color-vdgb-d-d: hsl(237, 14%, 26%);
+}
+
+:root {
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px;
+  /* color-scheme: light dark; */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* primary */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  /* light theme */
+  --vlg-l: hsl(0, 0%, 98%);
+  --vlgb-l: hsl(236, 33%, 92%);
+  --lgb-l: hsl(233, 11%, 84%);
+  --dgb-l: hsl(236, 9%, 61%);
+  --vdgb-l: hsl(235, 19%, 35%);
+
+  /* dark theme */
+  --vdb-d: hsl(235, 21%, 11%);
+  --vddb-d: hsl(235, 24%, 19%);
+  --lgb-d: hsl(234, 39%, 85%);
+  --lgb-d-hover: hsl(236, 33%, 92%);
+  --dgb-d: hsl(234, 11%, 52%);
+  --vdgb-d: hsl(233, 14%, 35%);
+  --vdgb-d-d: hsl(237, 14%, 26%);
+}
+
+[data-theme="light"] {
+  --text: var(--vdgb-l);
+  --text-done: var(--lgb-l);
+  --text-hover: var(--lgb-d-hover);
+  --text-pl: var(--dgb-l);
+  --main-bg: var(--vlg-l);
+  --border-color: var(--vlgb-l);
+  --todo-bg: white;
+}
+
+[data-theme="dark"] {
+  --text: var(--lgb-d);
+  --text-hover: var(--lgb-d-hover);
+  --text-done: var(--color-vdgb-d);
+  --text-pl: var(--dgb-l);
+  --main-bg: var(--vdb-d);
+  --border-color: var(--vdgb-d-d);
+  --todo-bg: var(--vddb-d);
+}
+
+body {
+  margin: 0;
+}
+
+.check-bg {
+  background: var(--check-bg);
+}
+
+.text {
+  color: var(--text);
+}
+.text-done {
+  color: var(--text-done);
+}
+
+.text-pl {
+  color: var(--text-pl);
+}
+.text:hover, .text-pl:hover{
+  color: var(--text-hover);
+}
+
+.todo-bg {
+  background-color: var(--todo-bg);
+}
+.toggle-brdr {
+  border: 1px solid var(--border-color);
+}
+.toggle-brdr:hover {
+  border-color: transparent;
+  background: linear-gradient(var(--todo-bg), var(--todo-bg)) padding-box,
+    var(--check-bg) border-box;
+  border-radius: calc(infinity * 1px);
+}
+
+.todo-brdr {
+  border-color: var(--border-color);
+}
+.main-bg {
+  background-color: var(--main-bg);
+}
+.text-last {
+  color: var(--text-pl);
+}
