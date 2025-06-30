@@ -61,9 +61,9 @@
 }
 
 [data-theme="light"] {
-  --text: var(--vdgb-l);
+  --text: var(--dgb-l);
   --text-done: var(--lgb-l);
-  --text-hover: var(--lgb-d-hover);
+  --text-hover: var(--vdgb-l);
   --text-pl: var(--dgb-l);
   --main-bg: var(--vlg-l);
   --border-color: var(--vlgb-l);
