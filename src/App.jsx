@@ -10,7 +10,7 @@ const data = [
 ];
 
 const App = () => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [todos, setTodos] = useState([]);
   const [selectedTodos, setSelectedTodos] = useState([]);
   const [selected, setSelected] = useState("All");
